@@ -37,9 +37,9 @@ Top-level properties:
   attacks can be mitigated by storing each signature string until expiration.
 
 - `aud` string indicates the target/owner of the webhook.  The string can be
-  obtained from Ninchat while configuring webhooks: **its scope can be realm,
-  realm owner (user) or company**.  It must always be verified before
-  processing a request.
+  obtained from Ninchat while configuring webhooks: its scope can be realm,
+  realm owner (user) or company.  It must always be verified before processing
+  a request.
 
 - `event` string is the event name.
 
