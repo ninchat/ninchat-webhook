@@ -1,7 +1,7 @@
 # Ninchat webhook event: `audience_accepted`
 
-The webhook document contains the `audience_accepted` property.  It is an
-object with the following properties:
+The webhook document contains the `event_id` and `audience_accepted`
+properties.  The latter is an object with the following properties:
 
 - `realm_id` string.
 - `queue_id` string.

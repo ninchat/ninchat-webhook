@@ -43,6 +43,8 @@ Top-level properties:
 
 - `event` string is the event name.
 
+Event type dependent top-level properties:
+
 - `event_id` string is a unique identifier for the event instance.  If it's
   seen again, it means that a previous request is being retried (i.e. the
   connection failed before Ninchat could receive the response).  The webhook
@@ -56,7 +58,7 @@ Top-level properties:
 
 When webhooks are configured, Ninchat will send a verification request to the
 webhook URL.  It looks like a normal webhook, with event type
-`webhook_verification` but *without* an event id.  The `webhook_verification`
+`webhook_verification`, without an event id.  The `webhook_verification`
 property is a challenge string which must be echoed back: the HTTP response
 body must be a JSON document with the `aud` and `webhook_verification`
 properties.  The value of `aud` must be `https://ninchat.com`.
