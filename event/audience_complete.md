@@ -77,6 +77,11 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
             }
         },
         "channel_id": "01234abc",
+        "channel": {
+            "metadata": {
+                "OnTheFly": "stuff"
+            }
+        },
         "messages": [
             {
                 "id":        "0fb74jl5",
@@ -87,7 +92,14 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
                 "fold":      true,
                 "payload":   {"text": "Hello, Pirjo!"}
             },
-            ...
+            {
+                "id":        "0fb74jl6",
+                "time":      1320846071.376,
+                "type":      "ninchat.com/metadata",
+                "user_id":   "05kq2htc",
+                "user_name": "Pekka",
+                "payload":   {"data": {"OnTheFly": "stuff"}}
+            }
         ]
     }
 }
