@@ -116,3 +116,8 @@ Content-Length: 35
 - [Audience complete](event/audience_complete.md)
 - [Data access](event/data_access.md)
 
+
+## Support library
+
+Ninchat Go package includes [webhook support](https://godoc.org/github.com/ninchat/ninchat-go/webhook).
+

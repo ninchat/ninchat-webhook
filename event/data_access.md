@@ -97,3 +97,12 @@ Content-Length: 1357
     ]
 }
 ```
+
+
+### Example code
+
+Ninchat Go [webhook package](https://godoc.org/github.com/ninchat/ninchat-go/webhook)
+includes [an example](https://github.com/ninchat/ninchat-go/blob/master/webhook/example/processor.go)
+of storing data via [`audience_complete`](audience_complete.md) and loading it
+using `data_access`.
+
