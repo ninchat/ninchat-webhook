@@ -107,3 +107,12 @@ Content-Length: 35
     "webhook_verification": "flkejl4jr3as32"
 }
 ```
+
+
+## Event types
+
+- [Audience requested](event/audience_requested.md)
+- [Audience accepted](event/audience_accepted.md)
+- [Audience complete](event/audience_complete.md)
+- [Data access](event/data_access.md)
+
