@@ -26,6 +26,9 @@ The `audience` object contains the following properties:
 `accept_time` and `finish_time` are available only for channel/dialogue
 audiences.
 
+The `member_message_metadata` object contains user ids mapped to metadata
+objects.  It is a summary of the metadata messages.
+
 The `messages` objects contain the following properties:
 
 - `id` string which is unique within the audience.
@@ -77,8 +80,8 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
             }
         },
         "channel_id": "01234abc",
-        "channel": {
-            "metadata": {
+        "member_message_metadata": {
+            "05kq2htc": {
                 "OnTheFly": "stuff"
             }
         },
