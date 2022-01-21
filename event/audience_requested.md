@@ -5,8 +5,12 @@ properties.  The latter is an object with the following properties:
 
 - `realm_id` string.
 - `queue_id` string.
+- `queue_members` object array (optional).
 - `audience_id` string.
 - `audience` object.
+
+The `queue_members` array (if any) contains objects which are described in the
+[audience_accepted](audience_accepted.md) document.
 
 The `audience` object contains the following properties:
 
@@ -35,8 +39,20 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
     "event":    "audience_requested",
     "event_id": "38hj5ip6789gf",
     "audience_requested": {
-        "realm_id":    "abc123",
-        "queue_id":    "def456",
+        "realm_id": "abc123",
+        "queue_id": "def456",
+        "queue_members": [
+            {
+                "user_id": "16ir3iud"
+            },
+            {
+                "user_id": "05kq2htc",
+                "identifiers": {
+                    "urn:oid:1.2.840.113549.1.9.1": ["jane.user@example.com"],
+                    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": ["4066c3507538"]
+                }
+            }
+        ],
         "audience_id": "38hj5ip6789ge",
         "audience": {
             "request_time": 1445592871.785086,

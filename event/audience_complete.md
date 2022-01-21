@@ -5,6 +5,7 @@ properties.  The latter is an object with the following properties:
 
 - `realm_id` string.
 - `queue_id` string.
+- `queue_member` object.
 - `audience_id` string.
 - `audience` object.
 - `channel_id` string (optional).
@@ -13,6 +14,9 @@ properties.  The latter is an object with the following properties:
 
 The webhook contains `channel_id`, `dialogue_id` or neither.  If neither is
 present, `messages` is not present either.
+
+See [audience_accepted](audience_accepted.md) for a description of the
+`queue_member` object.
 
 The `audience` object contains the following properties:
 
@@ -60,8 +64,15 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
     "event":    "audience_complete",
     "event_id": "38hj5ip6789gf",
     "audience_complete": {
-        "realm_id":    "abc123",
-        "queue_id":    "def456",
+        "realm_id": "abc123",
+        "queue_id": "def456",
+        "queue_member": {
+            "user_id": "05kq2htc",
+            "identifiers": {
+                "urn:oid:1.2.840.113549.1.9.1": ["jane.user@example.com"],
+                "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": ["4066c3507538"]
+            }
+        },
         "audience_id": "38hj5ip6789ge",
         "audience": {
             "request_time":  1445592871.785086,

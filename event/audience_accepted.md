@@ -5,12 +5,18 @@ properties.  The latter is an object with the following properties:
 
 - `realm_id` string.
 - `queue_id` string.
+- `queue_member` object.
 - `audience_id` string.
 - `audience` object.
 - `channel_id` string (optional).
 - `dialogue_id` string array (optional).
 
 The webhook contains `channel_id` or `dialogue_id`.
+
+The `queue_member` object contains the following properties:
+
+- `user_id` string.
+- `identifiers` object (optional) which contains unspecified properties in URI (URL/URN) format, with string arrays as values.
 
 The `audience` object contains the following properties:
 
@@ -40,12 +46,19 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
     "event":    "audience_accepted",
     "event_id": "38hj5ip6789gf",
     "audience_accepted": {
-        "realm_id":    "abc123",
-        "queue_id":    "def456",
+        "realm_id": "abc123",
+        "queue_id": "def456",
+        "queue_member": {
+            "user_id": "05kq2htc",
+            "identifiers": {
+                "urn:oid:1.2.840.113549.1.9.1": ["jane.user@example.com"],
+                "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": ["4066c3507538"]
+            }
+        },
         "audience_id": "38hj5ip6789ge",
         "audience": {
-            "request_time":  1445592871.785086,
-            "accept_time":   1445592877.183851,
+            "request_time": 1445592871.785086,
+            "accept_time":  1445592877.183851,
             "members": {
                 "05kq2htc":      {"agent": true},
                 "38hj5ip5000eg": {"customer": true}
