@@ -74,3 +74,17 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
 HTTP/1.1 200 OK
 Content-Length: 0
 ```
+
+
+## Notes
+
+### Direct accept URL
+
+The `queue_id` and `audience_id` values from the webhook can be used to form a
+URL for accepting the audience:
+
+    https://ninchat.com/app/#/x/accept/QUEUE_ID/AUDIENCE_ID
+
+The specified audience is accepted automatically when the URL is opened in a
+browser.
+
