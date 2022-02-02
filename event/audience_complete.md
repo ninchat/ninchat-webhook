@@ -33,15 +33,8 @@ audiences.
 The `member_message_metadata` object contains user ids mapped to metadata
 objects.  It is a summary of the metadata messages.
 
-The `messages` objects contain the following properties:
-
-- `id` string which is unique within the audience.
-- `time` as a number.
-- `type` string is [`ninchat.com/file`](https://ninchat.com/file), [`ninchat.com/info/*`](https://ninchat.com/info), [`ninchat.com/metadata`](https://ninchat.com/metadata), [`ninchat.com/notice`](https://ninchat.com/notice), [`ninchat.com/text`](https://ninchat.com/text) or [`ninchat.com/ui/*`](https://ninchat.com/ui).  More options may be added in the future.
-- `user_id` string identifies the author of the message.
-- `user_name` string (optional) is the author's name at the time of the message.
-- `fold` boolean (optional) means that this message replaces an earlier message with the same type from the same author.
-- `payload`, the type of which depends on `type`.  All supported message types can be represented using a single JSON value: this is the deserialized representation.
+The `messages` array contains objects which are described in the
+[message_sent](message_sent.md) document.
 
 
 ### Example
@@ -103,7 +96,6 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
                 "type":      "ninchat.com/text",
                 "user_id":   "05kq2htc",
                 "user_name": "Pekka",
-                "fold":      true,
                 "payload":   {"text": "Hello, Pirjo!"}
             },
             {
@@ -112,6 +104,7 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
                 "type":      "ninchat.com/metadata",
                 "user_id":   "05kq2htc",
                 "user_name": "Pekka",
+                "fold":      true,
                 "payload":   {"data": {"OnTheFly": "stuff"}}
             }
         ]

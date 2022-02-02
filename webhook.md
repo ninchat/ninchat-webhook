@@ -13,6 +13,7 @@ Supported receiver types:
 - [Audience requested](event/audience_requested.md)
 - [Audience accepted](event/audience_accepted.md)
 - [Audience complete](event/audience_complete.md)
+- [Message sent](event/message_sent.md)
 - [Data access](event/data_access.md)
 
 
