@@ -11,6 +11,7 @@ Supported receiver types:
 ## Event types
 
 - [Audience requested](event/audience_requested.md)
+- [Audience request dropped](event/audience_request_dropped.md)
 - [Audience accepted](event/audience_accepted.md)
 - [Audience complete](event/audience_complete.md)
 - [Message sent](event/message_sent.md)
