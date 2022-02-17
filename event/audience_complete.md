@@ -5,7 +5,7 @@ properties.  The latter is an object with the following properties:
 
 - `realm_id` string.
 - `queue_id` string.
-- `queue_member` object.
+- `queue_member` object (optional).
 - `audience_id` string.
 - `audience` object.
 - `channel_id` string (optional).
@@ -13,7 +13,7 @@ properties.  The latter is an object with the following properties:
 - `messages` object array (optional).
 
 The webhook contains `channel_id`, `dialogue_id` or neither.  If neither is
-present, `messages` is not present either.
+present, `queue_member` and `messages` are not present either.
 
 See [audience_accepted](audience_accepted.md) for a description of the
 `queue_member` object.
