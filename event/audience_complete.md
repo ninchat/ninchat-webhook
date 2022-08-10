@@ -10,6 +10,7 @@ properties.  The latter is an object with the following properties:
 - `audience` object.
 - `channel_id` string (optional).
 - `dialogue_id` string array (optional).
+- `member_message_metadata` object (optional).
 - `messages` object array (optional).
 
 The webhook contains `channel_id`, `dialogue_id` or neither.  If neither is
