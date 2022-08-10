@@ -12,6 +12,7 @@ properties.  The latter is an object with the following properties:
 - `dialogue_id` string array (optional).
 - `member_message_metadata` object (optional).
 - `messages` object array (optional).
+- `tagging` object (optional).
 
 The webhook contains `channel_id`, `dialogue_id` or neither.  If neither is
 present, `queue_member` and `messages` are not present either.
@@ -36,6 +37,11 @@ objects.  It is a summary of the metadata messages.
 
 The `messages` array contains objects which are described in the
 [message_sent](message_sent.md) document.
+
+The `tagging` object contains the following properties:
+
+- `tags` object contains details of the "tag_ids" metadata sent by the acceptor.  Each tag id is mapped to an object which may contain the `name` and `parent_id` properties.
+- `parents` object contains details of relevant parent tags.  It is similar to `tags`.
 
 
 ### Example
@@ -106,9 +112,26 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
                 "user_id":   "05kq2htc",
                 "user_name": "Pekka",
                 "fold":      true,
-                "payload":   {"data": {"OnTheFly": "stuff"}}
+                "payload":   {"data": {"tag_ids": ["34567"]}}
             }
-        ]
+        ],
+        "tagging": {
+            "tags": {
+                "34567": {
+                    "name":      "My blue tag",
+                    "parent_id": "23456"
+                }
+            },
+            "parents": {
+                "12345": {
+                    "name": "My tag group"
+                },
+                "23456": {
+                    "name":      "Mid-level"
+                    "parent_id": "12345"
+                }
+            }
+        }
     }
 }
 ```
