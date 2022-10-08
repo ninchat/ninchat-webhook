@@ -1,29 +1,17 @@
 # Ninchat HTTP webhooks
 
-Webhooks are delivered using HTTP POST requests; a webhook essentially consists
-of a JSON body and a signature header.  The webhook processor must support
-HTTPS with TLS version 1.2.  HTTP response codes 200-204 are considered
+Webhooks are delivered using HTTP POST requests.  The webhook processor must
+support HTTPS with TLS version 1.2.  HTTP response codes 200-204 are considered
 successful.  Other codes cause the request to be retried later.
 
-The request body is signed using an asymmetric cryptographic algorithm; the
-signature can be verified using Ninchat's public key.  The specific key is
-identified by the webhook request, and the matching public key data can be
-retrieved from https://api.ninchat.com/config/keys.json as a [JSON Web Key
-Set](https://tools.ietf.org/html/rfc7517).  Key rotations are communicated in
-advance, so the public key can be stored (or at least cached) by the webhook
-processor.
+HTTP requests must be authenticated by verifying their
+[signatures](webhook.md#signature-verification).  When using the
+[default](webhook.md#default) format, the signature is provided in the
+`X-Ninchat-Signature` HTTP header.  When using the
+[wrapped](webhook.md#wrapped) format, the signature is provided in the request
+content.
 
-Currently only the [Ed25519](https://en.wikipedia.org/wiki/EdDSA) signature
-algorithm is supported.
-
-
-## HTTP headers
-
-- `User-Agent` string starts with `ninchat-webhook/`.
-
-- `X-Ninchat-Signature` contains the signature using lower-case hexadecimal
-  encoding.  The signature string can be used to uniquely identify the webhook
-  request.
+The `User-Agent` HTTP header is a string which starts with `ninchat-webhook/`.
 
 
 ## JSON document
@@ -58,7 +46,7 @@ Event type dependent top-level properties:
 
 When webhooks are configured, Ninchat will send a verification request to the
 webhook URL.  It looks like a normal webhook, with event type
-`webhook_verification`, without an event id.  The `webhook_verification`
+`webhook_verification`, but without an event id.  The `webhook_verification`
 property is a challenge string which must be echoed back: the HTTP response
 body must be a JSON document with the `aud` and `webhook_verification`
 properties.  The value of `aud` must be `https://ninchat.com`.
@@ -69,8 +57,7 @@ activated.  To retry verification, webhook configuration must be reactivated
 via Ninchat.
 
 Only response codes 200 and 203 are considered successful for verification
-requests.  (The request should not create resources and it cannot be processed
-asynchronously, and the response must have content.)
+requests.
 
 
 ### Example
