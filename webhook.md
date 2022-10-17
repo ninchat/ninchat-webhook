@@ -31,6 +31,10 @@ By default the webhook JSON document is provided directly in the request body.
 Wrapped webhook encapsulates the webhook document into an outer JSON document.
 The wrapper contains the following properties:
 
+- `wrapped` boolean with value `true`.  The webhook document doesn't contain
+  the `wrapped` property or its value is not `true`, so this can be used to
+  detect whether the request content is wrapped or not.
+
 - `signature` string contains a signature of the wrapped content.  It uses
   lower-case hexadecimal encoding.
 

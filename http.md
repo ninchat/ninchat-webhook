@@ -11,6 +11,9 @@ HTTP requests must be authenticated by verifying their
 [wrapped](webhook.md#wrapped) format, the signature is provided in the request
 content.
 
+The `X-Ninchat-Format` HTTP header indicates the delivery format: `default` or
+`wrapped`.
+
 The `User-Agent` HTTP header is a string which starts with `ninchat-webhook/`.
 
 
