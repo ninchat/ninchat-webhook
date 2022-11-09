@@ -4,7 +4,9 @@ The webhook document contains the `event_id` and `audience_accepted`
 properties.  The latter is an object with the following properties:
 
 - `realm_id` string.
+- `realm` object.
 - `queue_id` string.
+- `queue` object.
 - `queue_member` object.
 - `audience_id` string.
 - `audience` object.
@@ -12,6 +14,8 @@ properties.  The latter is an object with the following properties:
 - `dialogue_id` string array (optional).
 
 The webhook contains `channel_id` or `dialogue_id`.
+
+The `realm` and `queue` objects contain the `name` property.
 
 The `queue_member` object contains the following properties:
 

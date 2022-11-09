@@ -4,10 +4,14 @@ The webhook document contains the `event_id` and `audience_requested`
 properties.  The latter is an object with the following properties:
 
 - `realm_id` string.
+- `realm` object.
 - `queue_id` string.
+- `queue` object.
 - `queue_members` object array (optional).
 - `audience_id` string.
 - `audience` object.
+
+The `realm` and `queue` objects contain the `name` property.
 
 The `queue_members` array (if any) contains objects which are described in the
 [audience_accepted](audience_accepted.md) document.
