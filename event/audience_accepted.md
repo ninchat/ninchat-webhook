@@ -51,7 +51,13 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
     "event_id": "38hj5ip6789gf",
     "audience_accepted": {
         "realm_id": "abc123",
+        "realm": {
+            "name": "The Organization"
+        },
         "queue_id": "def456",
+        "queue": {
+            "name": "The Queue"
+        },
         "queue_member": {
             "user_id": "05kq2htc",
             "identifiers": {
