@@ -8,7 +8,6 @@
 - [Audience agent released](event/audience_agent_released.md)
 - [Audience complete](event/audience_complete.md)
 - [Message sent](event/message_sent.md)
-- [Data access](event/data_access.md)
 
 
 ## Delivery mechanisms
