@@ -12,6 +12,7 @@ properties.  The latter is an object with the following properties:
 - `audience` object.
 - `channel_id` string (optional).
 - `dialogue_id` string array (optional).
+- `channel_members_metadata` object (optional).
 - `member_message_metadata` object (optional).
 - `messages` object array (optional).
 - `tagging` object (optional).
@@ -101,6 +102,11 @@ X-Ninchat-Signature: 3f61a902f5c473ef8238bd52b84dbcd3382e0d6c7e0a1605ac85cc79a1e
             }
         },
         "channel_id": "01234abc",
+        "channel_members_metadata": {
+            "05kq2htc": {
+                "Initial": "things"
+            }
+        },
         "member_message_metadata": {
             "05kq2htc": {
                 "OnTheFly": "stuff"
