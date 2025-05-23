@@ -10,10 +10,7 @@ properties.  The latter is an object with the following properties:
 - `queue_member` object.
 - `audience_id` string.
 - `audience` object.
-- `channel_id` string (optional).
-- `dialogue_id` string array (optional).
-
-The webhook contains `channel_id` or `dialogue_id`.
+- `channel_id` string.
 
 The `realm` and `queue` objects contain the `name` property.
 

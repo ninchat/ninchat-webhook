@@ -11,14 +11,10 @@ properties.  The latter is an object with the following properties:
 - `audience_id` string.
 - `audience` object.
 - `channel_id` string (optional).
-- `dialogue_id` string array (optional).
 - `channel_members_metadata` object (optional).
 - `member_message_metadata` object (optional).
 - `messages` object array (optional).
 - `tagging` object (optional).
-
-The webhook contains `channel_id`, `dialogue_id` or neither.  If neither is
-present, `queue_member` and `messages` are not present either.
 
 The `realm` and `queue` objects contain the `name` property.
 
@@ -34,8 +30,7 @@ The `audience` object contains the following properties:
 - `members` object containing user ids.  Each user id is mapped to an object which may contain either the `agent` or the `customer` boolean property.
 - `metadata` object which contains audience metadata.
 
-`accept_time` and `finish_time` are available only for channel/dialogue
-audiences.
+`accept_time` and `finish_time` are available only if `channel_id` is present.
 
 The `member_message_metadata` object contains user ids mapped to metadata
 objects.  It is a summary of the metadata messages.
