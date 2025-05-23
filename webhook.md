@@ -5,6 +5,7 @@
 - [Audience requested](event/audience_requested.md)
 - [Audience request dropped](event/audience_request_dropped.md)
 - [Audience accepted](event/audience_accepted.md)
+- [Audience finished](event/audience_finished.md)
 - [Audience agent released](event/audience_agent_released.md)
 - [Audience complete](event/audience_complete.md)
 - [Message sent](event/message_sent.md)
